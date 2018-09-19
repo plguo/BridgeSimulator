@@ -1,0 +1,7 @@
+plugins:
+  - jekyll-assets
+
+assets:
+  sources:
+    - _assets/css
+    - _assets/js

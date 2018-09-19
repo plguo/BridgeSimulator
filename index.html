@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="container">
+  <canvas id="main-canvas"></canvas>
+</div>
+
+<div class="toolbar">
+  <button onclick="creationMode = true">Add</button><br/>
+  <button onclick="creationMode = false">Drag</button><br/>
+  <button onclick="renderEngine.print()">Print</button><br/>
+</div>
+
+<div id="position-editor">
+  <div>
+    x: <input type="text" name="x" id="position-editor-x" autocomplete="off" onkeydown="if (event.keyCode == 13) jointEditor.updateButton();"> mm
+  </div>
+  <div>
+    y: <input type="text" name="y" id="position-editor-y" autocomplete="off" onkeydown="if (event.keyCode == 13) jointEditor.updateButton();"> mm
+  </div>
+  <div>
+    F: <input type="text" name="f" id="position-editor-f" autocomplete="off" onkeydown="if (event.keyCode == 13) jointEditor.updateButton();"> N
+  </div>
+  <div style="text-align:center; margin-top: 5px;">
+    <button onclick="jointEditor.updateButton();">Update</button><br/>
+    <button onclick="jointEditor.removeButton();">Remove</button><br/>
+    <button id="position-editor-mir" onclick="jointEditor.mirrorButton();">Mirror</button><br/>
+    <button id="position-editor-lock-x" onclick="jointEditor.lockButton('x');">Lock X</button>
+    <button id="position-editor-lock-y" onclick="jointEditor.lockButton('y');">Lock Y</button><br/>
+    <button onclick="jointEditor.jointTypeButton(null);">Joint</button>
+    <button onclick="jointEditor.jointTypeButton('f');">Fixed</button>
+    <button onclick="jointEditor.jointTypeButton('s');">Slide</button><br/>
+    <button id="position-editor-show-pos" onclick="jointEditor.showPositionButton();">Hide Position</button>
+    <button onclick="jointEditor.optimizeButton();">Optimize</button><br/>
+    <button onclick="jointEditor.closeButton();">Close</button>
+  </div>
+</div>
+
+<div id="beam-editor">
+  <div>
+    Force: <input type="text" name="f" id="beam-editor-f" autocomplete="off" onkeydown="if (event.keyCode == 13) beamEditor.updateButton();"> N/mm
+  </div>
+  <div style="text-align:center; margin-top: 5px;">
+    <button onclick="beamEditor.updateButton();">Update</button><br/>
+    <button onclick="beamEditor.removeButton();">Remove</button><br/>
+    <button onclick="beamEditor.closeButton();">Close</button>
+  </div>
+</div>
